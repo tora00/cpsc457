@@ -133,3 +133,10 @@ extern "C" int kill(pid_t pid, int sig) {
   *__errno() = EINVAL;
   return -1;
 }
+
+/**** assignment2 functions ******/
+extern "C" int sched_setaffinity(pid_t pid, size_t cpusetsize, cpu_set_t *mask){
+}
+
+extern "C" int sched_getafifnity(pid_t pid, size_t cputsetsize, cpu_set_t *mask){
+}

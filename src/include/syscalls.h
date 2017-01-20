@@ -47,11 +47,16 @@ enum : mword {
   semV,
   privilege,
   _init_sig_handler,
-  max
+/* Assignment 1 - registering additional system calls to enum */
+  syscallSetAffinity,
+  syscallGetAffinity
 };
 
 };
 
-extern "C" ssize_t syscallStub(mword x, mword a1 = 0, mword a2 = 0, mword a3 = 0, mword a4 = 0, mword a5 = 0);
+extern "C" ssize_t syscallStub(mword x, mword a1 = 0, mword a2 = 0, mword a3 = 0, mword a4 = 0, mword a5 = 0); 
+/* Assignment 1 additional system calls */
+extern "C" sched_setaffinity(pid_t pid, size_t cpusetsize, cpu_set_t *mask);
+extern "C" sched_getaffinity(pid_t pid, size_t cpusetsize, cpu_set_t *mask);
 
 #endif /* _syscalls_h_ */
