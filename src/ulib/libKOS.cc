@@ -136,7 +136,9 @@ extern "C" int kill(pid_t pid, int sig) {
 
 /**** assignment2 functions ******/
 extern "C" int sched_setaffinity(pid_t pid, size_t cpusetsize, cpu_set_t *mask){
+	return syscallStub(SyscallNum::sched_setaffinitySys, pid, cpusetsize, *mask);
 }
 
-extern "C" int sched_getafifnity(pid_t pid, size_t cputsetsize, cpu_set_t *mask){
+extern "C" int sched_getaffinity(pid_t pid, size_t cputsetsize, cpu_set_t *mask){
+	return syscallStub(SyscallNum::sched_getaffinitySys, pid, cpusetsize, *mask);
 }

@@ -269,8 +269,8 @@ static const syscall_t syscalls[] = {
   syscall_t(privilege),
   syscall_t(_init_sig_handler),
 // assignment 2 additional calls inb the system array
-  syscall_t(sched_setaffinity),
-  syscall_t(sched_getaffinity)
+  syscall_t(sched_setaffinitySys),
+  syscall_t(sched_getaffinitySys)
 };
 
 static_assert(sizeof(syscalls)/sizeof(syscall_t) == SyscallNum::max, "syscall list error");
@@ -285,7 +285,9 @@ extern "C" ssize_t syscall_handler(mword x, mword a1, mword a2, mword a3, mword 
 
 // assignment 2 additional system calls
 extern "C" sched_setaffinity(pid_t pid, size_t cpusetsize, cpu_set_t *mask){
+
 }
 
 extern "C" sched_getaffinity(pid_t pid, size_t cpusetsize, cput_set_t *mask){
+
 }

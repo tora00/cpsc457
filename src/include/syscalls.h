@@ -48,8 +48,8 @@ enum : mword {
   privilege,
   _init_sig_handler,
 /* Assignment 1 - registering additional system calls to enum */
-  syscallSetAffinity,
-  syscallGetAffinity
+  sched_setaffinity,
+  sched_getaffinity
 };
 
 };
